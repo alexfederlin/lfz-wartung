@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import Container from 'react-bootstrap/Container';
+import Stack from 'react-bootstrap/Stack';
+import Header from './components/Header';
+import Sidebar from './components/Sidebar';
+import Flugzeuge from './components/Flugzeuge';
 
-function App() {
+
+export default function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container fluid className="App">
+      <Header />
+      <Container>
+        <Stack direction="horizontal">
+          <Sidebar />
+          <Container>
+            <Flugzeuge />
+          </Container>
+        </Stack>            
+      </Container>
+    </Container>
   );
 }
-
-export default App;
