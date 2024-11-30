@@ -1,8 +1,8 @@
-GET http://localhost:5000/planes HTTP/1.1
+GET http://localhost:5000/api/planes HTTP/1.1
 
 ###
 
-POST https://localhost:5000/plane/1 HTTP/1.1
+POST http://localhost:5000/api/plane/1 HTTP/1.1
 content-type: application/json
 
 {
