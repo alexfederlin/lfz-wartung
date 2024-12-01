@@ -1,23 +1,23 @@
 import Container from 'react-bootstrap/Container';
-import Stack from 'react-bootstrap/Stack';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Header from './components/Header';
-import Sidebar from './components/Sidebar';
-import Flugzeuge from './components/Flugzeuge';
-
+import LfzListe from './pages/LfzListe';
+import LfzDaten from './pages/LfzDaten';
+import Ausruestung from './pages/Ausruestung';
 
 export default function App() {
 
   return (
     <Container fluid className="App">
-      <Header />
-      <Container>
-        <Stack direction="horizontal">
-          <Sidebar />
-          <Container>
-            <Flugzeuge />
-          </Container>
-        </Stack>            
-      </Container>
+      <BrowserRouter>
+        <Header />
+        <Routes>
+          <Route path="/" element={<LfzListe />} />
+          <Route path="/lfzdaten" element={<LfzDaten />} />
+          <Route path="/ausruestung" element={<Ausruestung />} />
+          <Route path="*" element={<Navigate to="/" />} />
+        </Routes>
+      </BrowserRouter>      
     </Container>
   );
 }
