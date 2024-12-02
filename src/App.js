@@ -13,7 +13,7 @@ export default function App() {
         <Header />
         <Routes>
           <Route path="/" element={<LfzListe />} />
-          <Route path="/lfzdaten" element={<LfzDaten />} />
+          <Route path="/lfzdaten/:lfz" element={<LfzDaten />} />
           <Route path="/ausruestung" element={<Ausruestung />} />
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
