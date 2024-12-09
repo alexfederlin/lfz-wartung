@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import Spinner from 'react-bootstrap/Spinner';
+import Flugzeug from './Flugzeug'
 
 // const BASE_API_URL = process.env.REACT_APP_BASE_API_URL;
 //const BASE_API_URL = 'http://localhost:5000'
@@ -34,15 +35,9 @@ export default function Flugzeuge() {
                 {lfzs.length === 0 ?
                     <p>Noch keine Flugzeuge angelegt.</p>
                 :
-                lfzs.map(lfz =>{
-                    return(
-                    <p key={lfz.id}>
-                        <b>{lfz.name}</b> &mdash; {lfz.model}
-                        <br />
-                        {lfz.manufacturer}
-                    </p>
-                    );
-                })
+                lfzs.map(
+                  lfz => <Flugzeug key={lfz.id} lfz={lfz} />
+                )
                 }
             </>
           }

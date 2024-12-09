@@ -19,6 +19,8 @@
 .env.test.local
 .env.production.local
 __pycache__
+api/migrations
+*.db
 
 npm-debug.log*
 yarn-debug.log*
