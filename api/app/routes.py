@@ -8,12 +8,14 @@ bp = Blueprint('api', __name__, url_prefix='/api')
 def get_planes():
     planes = Plane.query.all()
 #    planes = [{"id":"1","name": "D-5318", "model":"Ka6", "manufacturer":"Alexander Schleicher"}]
-    return jsonify([{
+    response = jsonify([{
         'id': plane.id,
         'name': plane.name,
         'model': plane.model,
         'manufacturer': plane.manufacturer
     } for plane in planes])
+    response.headers.add('Access-Control-Allow-Origin', '*')
+    return response
     #return {'time': time.time()}
  
 
